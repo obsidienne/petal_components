@@ -20,11 +20,8 @@ defmodule PetalComponents do
         Tabs,
         Card,
         Table,
-        Accordion,
-        Icon
+        Accordion
       }
-
-      alias PetalComponents.HeroiconsV1
     end
   end
 end
