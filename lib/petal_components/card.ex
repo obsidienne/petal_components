@@ -74,6 +74,8 @@ defmodule PetalComponents.Card do
     doc: "sets a category color class"
   )
 
+  attr(:tags, :list, default: [], doc: "creates a tag")
+
   attr(:class, :string, default: "", doc: "CSS class")
   attr(:rest, :global)
   slot(:inner_block, required: false)
@@ -89,11 +91,19 @@ defmodule PetalComponents.Card do
         ])
       }
     >
-      <%= if @category do %>
-        <div class={"pc-card__category #{@category_color_class}"}>
-          <%= @category %>
-        </div>
-      <% end %>
+      <div class="flex items-center justify-between mb-3">
+        <%= if @category do %>
+          <div class={"pc-card__category #{@category_color_class}"}>
+            <%= @category %>
+          </div>
+        <% end %>
+
+        <%= if @tags do %>
+        <div class="flex gap-x-1 justify-items-end">
+           <Badge.badge variant="outline" label={@tag} />
+         </div>
+         <% end %>
+      </div>
 
       <%= if @heading do %>
         <div class="pc-card__heading">
