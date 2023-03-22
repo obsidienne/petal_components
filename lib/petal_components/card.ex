@@ -1,6 +1,8 @@
 defmodule PetalComponents.Card do
   use Phoenix.Component
 
+  alias PetalComponents.Badge
+
   import PetalComponents.Helpers
 
   attr(:class, :string, default: "", doc: "CSS class")
