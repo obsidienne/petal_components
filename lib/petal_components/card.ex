@@ -99,9 +99,9 @@ defmodule PetalComponents.Card do
         <% end %>
 
         <%= if @tags do %>
-        <div class="flex gap-x-1 justify-items-end">
-           <Badge.badge variant="outline" label={@tag} />
-         </div>
+          <div class="flex gap-x-1 justify-items-end">
+            <Badge.badge variant="outline" label={tag} :for={tag <- @tags} />
+          </div>
          <% end %>
       </div>
 
